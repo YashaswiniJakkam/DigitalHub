@@ -1,0 +1,134 @@
+#domain {
+    width: 100%;
+    height: 45px;
+    font-size: 18px; /* Adjust the size as needed */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background:rgb(188, 177, 177);
+}
+.container{
+    max-width: 500px;
+    max-height: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px grey;
+}
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    color: #07279A;
+}
+
+.container .title::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box {
+    margin: 20px 0 12px 0;
+    width:calc(100% / 2 - 20px);
+}
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color:#07279A;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #07279A;
+    padding-left: 15px;
+}
+form .button {
+    height: 45px;
+    margin: 10px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #192655;
+}
+.user-details .input-box input[type="date"]{
+    height:45px;
+    width: calc(100% - 30px);
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    margin-right: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+}
+.login-link p{
+    font-size: 14px;
+    color: #333;
+}
+.login-link a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-link a:hover{
+    text-decoration: underline;
+}
+
+.input-box {
+	    width: 300px;
+            margin: 20px;
+            position: relative;
+            /*margin-bottom: 15px;*/
+        }
+
+        .password-input {
+            width: calc(100% - 30px); /* Adjust based on your layout */
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            margin-top: 5px;
+        }

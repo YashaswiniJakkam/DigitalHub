@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Digital Hub home page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static './homepage/styles.css'%}">
+    <script src="{% static './homepage/script.js'%}"></script>
+</head>
+
+<body>
+    <header>
+        <div id="jntu-logo">
+            <img src="{% static './homepage/./Images/clg-logo.png'%}" ,label="jntugv-logo">
+        </div>
+        <div id="clg-details">
+            <h1>Jawaharlal Nehru Technological University Gurajada Vizianagaram</h1>
+            <h2>DWARAPUDI,VIZIANAGARAM,ANDHRA PRADESH - 535 005</h2>
+            <p>(A constituent college of JNTU-GV & approved by AICTE,New Delhi)(Recognized by UGC under Section 2(f) &
+                12(B)of UGC act 1956)</p>
+        </div>
+
+    </header>
+{%include 'home/navbar.html'%}
+    <div id="home">
+        <img src="{% static './homepage/Images/Learning-amico (1).png'%}">
+        <div class="intro-content">
+            <h1>Digital hub</h1>
+            <p>An innovative educational space to excel in the digital realm through innovation and collaboration</p>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class=" vision reveal fade-right">
+            <div>
+                <h1>Our Vision</h1>
+                <hr>
+                <p>We envision creating an innovative educational space empowering students from affiliated colleges to
+                    excel in the digital realm. As a beacon of technological advancement, we foster the fusion of
+                    knowledge, creativity, and digital tools to drive the future of education and research.</p>
+            </div>
+            <img src="{% static './homepage/Images/image2.png'%}">
+        </div>
+
+        <div class="mission reveal fade-left">
+            <img src="{% static './homepage/./Images/image3 (2).png'%}">
+            <div>
+                <h1>Our Mission</h1>
+                <hr>
+                <p>The mission of JNTU Gurajada Digital Hub is to provide a cutting-edge platform for students to engage
+                    in impactful projects. Through advanced digital resources, mentorship, and collaboration, we aim to
+                    nurture skills, enabling students to become future leaders, innovators, and problem-solvers. Our
+                    commitment extends to fostering an inclusive learning environment that encourages exploration and
+                    excellence in digital technology and beyond</p>
+            </div>
+        </div>
+    </div>
+    <section class="reveal fade-bottom">
+        <h1 style="font-size: 50px;">Operations at Digital Hub</h1>
+    </section>
+    <section class="operations">
+        <div class="operations-content reveal fade-bottom">
+            <img src="{% static './homepage/./Images/project.png'%}" class="project-image reveal fade-up">
+            <div>
+                <h1 class="reveal fade-bottom">Student Projects</h1>
+                <p class="reveal fade-bottom">Facilitating student-led projects that integrate digital technologies,
+                    encouraging innovative solutions to real-world problems. This can include capstone projects,
+                    research initiatives, and interdisciplinary collaborations.</p>
+            </div>
+        </div>
+
+        <div class="operations-content reveal fade-bottom">
+            <div class="reveal fade-bottom">
+                <h1>Internship Oppurtunities</h1>
+                <p>Establishing partnerships with industry to offer students internships. These experiences would
+                    provide practical, hands-on learning in various digital fields, bridging the gap between academic
+                    learning and real-world application.</p>
+            </div>
+            <img class="intern-image reveal fade-down" src="{% static './homepage/Images/internship.jpg'%}">
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <img class="research-image reveal fade-up" src="{% static './homepage/Images/Research.png'%}">
+            <div class="reveal fade-bottom">
+                <h1>Reasearch and Development</h1>
+                <p>Encouraging and supporting reasearch in digital technologies, possibly through grants,
+                    collaborations, and access to state-of-the-art facilities. This would foster a culture of innovation
+                    and contribute to advancements in the field.</p>
+            </div>
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <div class="reveal fade-bottom">
+                <h1>Training in the latest technologies</h1>
+                <p>Providing educational sessions on cutting-edge technologies like AI,ML,Blockchainn, nad IOT through
+                    workshops and courses. Keeping students abreast of the latest trends and skills in the dynamic tech
+                    sector.</p>
+                </div>
+                <img class="training-image reveal fade-down" src="{% static './homepage/Images/training.avif'%}">
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <img class="elearning-image reveal fade-up" src="{% static './homepage/Images/elearning.webp'%}">
+            <div class="reveal fade-bottom">
+                <h1>E-Learning Platforms</h1>
+                <p>Developing or integrating advanced e-learning platforms to provide remote access to digital
+                    resources, lectures, and interactive learning modules. This could include the use of virtual and
+                    augumented reality for imaersive learning experiences.</p>
+            </div>
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <div class="reveal fade-bottom">
+                <h1>Mentorship programs</h1>
+                <p>Connecting studentswith mentors from academia and industry fo rguidance, inspiration, and career
+                    advice. These mentorship programs can help students gain insights into their chosen fields and
+                    develop proffessional networks.</p>
+            </div>
+            <img class="mentorship reveal fade-down" src="{% static './homepage/./Images/mentorship.png'%}">
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <img class="community-image reveal fade-up" src="{% static './homepage/./Images/lms.jpg'%}">
+            <div class="reveal fade-bottom">
+                <h1>Learning Management System</h1>
+                <p>Implementing a robust LMS to facilitate online education, track student progress, and manage digital
+                    content. This system would be vital for organizing courses materials, assignments, and assesments,
+                    and for facilitating communication between students and instructors.</p>
+            </div>
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <div class="reveal fade-bottom">
+                <h1>Community Engagement and Events</h1>
+                <p>Organizing tech talks, hackathons, and workshops open to the broader community. This would not only
+                    provide additional learning oppurtunities for students but also position the Digital Hub as a center
+                    for technology and innovation within the community.</p>
+            </div>
+            <img class="community-image reveal fade-down" src="{% static './homepage/./Images/community.png'%}">
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <img class="industry-image reveal fade-up" src="{% static './homepage/./Images/industry collaboration.svg'%}">
+            <div class="reveal fade-bottom">
+                <h1>Industry collaboration</h1>
+                <p>Partnership with tech companies and startups for project collaborations, guest lectures, and
+                    technology showcases. This could provide students with insights into industry practices and
+                    potencial career paths.</p>
+            </div>
+        </div>
+        <div class="operations-content reveal fade-bottom">
+            <div class="reveal fade-bottom">
+                <h1>Alumni network</h1>
+                <p>Building a strong alumni network to support graduates and provides current students with networking
+                    opportunities, career advice, and potential job placements. </p>
+            </div>
+            <img class="alumni-image reveal fade-down" src="{% static './homepage/./Images/alumni network.jpg'%}">
+        </div>
+    </section>
+
+</body>
+
+</html>

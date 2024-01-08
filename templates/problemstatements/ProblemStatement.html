@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem Statements</title>
+  <link rel="stylesheet" href="{% static '/problemstatements/Problemstatement.css'%}">
+
+
+</head>
+
+<body>
+  {%include 'home/navbar.html'%}
+  <header>
+    <h1>Problem Statements</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="top">
+        <h2>Problem Statement 0</h2>
+        <div class="mentor-details">
+          <h4>Mentor: Gannamraju Satyanarayana</h4>
+          <h4>Contact: Satya@example.com</h4>
+        </div>
+      </div>
+      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
+        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
+        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
+        quam reprehenderit vitae.</p>
+      <button>View Details</button>
+    </div>
+    <div class="card">
+      <div class="top">
+        <h2>Problem Statement 1 </h2>
+        <div class="mentor-details">
+          <h4>Mentor: Gannamraju Satyanarayana</h4>
+          <h4>Contact: Satya@example.com</h4>
+        </div>
+      </div>
+      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
+        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
+        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
+        quam reprehenderit vitae.</p>
+      <button>View Details</button>
+    </div>
+    <div class="card">
+      <div class="top">
+        <h2>Problem Statement 2</h2>
+        <div class="mentor-details">
+          <h4>Mentor: Gannamraju Satyanarayana</h4>
+          <h4>Contact: Satya@example.com</h4>
+        </div>
+      </div>
+      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
+        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
+        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
+        quam reprehenderit vitae.</p>
+      <button>View Details</button>
+    </div>
+    <div class="card">
+      <div class="top">
+        <h2>Problem Statement 3</h2>
+        <div class="mentor-details">
+          <h4>Mentor: Gannamraju Satyanarayana</h4>
+          <h4>Contact: Satya@example.com</h4>
+        </div>
+      </div>
+      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
+        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
+        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
+        quam reprehenderit vitae.</p>
+      <button>View Details</button>
+    </div>
+
+    <div class="pagination">
+      <button>&lt;&lt; Prev</button>
+      <div class="itemsPerPage">
+        <label for="itemsPerPage">Items per page:</label>
+        <select id="itemsPerPage">
+          <option value="10">10</option>
+          <option value="40">40</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <button>Next &gt;&gt;</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

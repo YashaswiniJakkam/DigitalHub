@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/homepage/styles.css'%}">
+
+<div id="nav-container">
+	<h1 id="hub-logo">Digital Hub</h1>
+	<div id="nav-bar" class="nav">
+		<a href="/">Home</a>
+		<a href="/problemstatements">Problem Statements</a>
+		<a href="/courses/">Courses</a>
+		<a href="#consultancy">Consultancy</a>
+		<a href="#gallery">Gallery</a>
+		<a href="#contact">Contact</a>
+		<div class="register-dropdown">
+			<div class="register-button">Register</div>
+			<div class="register-options">
+				<a href="/auth/studentRegistration">As Student</a>
+				<a href="/auth/mentorRegistration">As mentor</a>
+			</div>
+		</div>
+		<a href="/auth/login">Login</a>
+	</div>
+	<div class="hamburger" onclick="responsive_nav()">
+			<i class="fa fa-bars"></i>
+	</div>
+</div>
+<script src="{% static './homepage/script.js'%}"></script>
