@@ -567,4 +567,34 @@ footer{
   color:white;
   text-align: center;
   padding:10px;
+  height:10vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Quicksand';
+}
+
+#loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+#loading img{
+  width: 256px;
+  aspect-ratio: 16/9;
 }

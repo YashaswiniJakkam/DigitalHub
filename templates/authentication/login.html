@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{% static 'login/login.css'%}">
 </head>
 <body>
     <div class="container">
+        <div class="jntu-img">
+            <img src="{% static 'login/logo.png' %}" alt="" class="src" height="120px" width="120px">
+        </div>
         <div class="name">
             <h3>Login</h3>
         </div>
-        <form action="" class="login-form">
+        <form method="post" action="{% url 'authentication:login'%}" class="login-form">
+            {%csrf_token%}
             <div class="email-div">
                     <!-- <label for="email">Email</label> -->
                     <input type="email" name="email" id="" placeholder="Enter email">
@@ -28,10 +33,49 @@
                 <input type="submit" value="Submit">
             </div>
             <div class="sign-up">
-                <span>Don't have an account <a href="#">SignUp</a></span>
+                <span>Don't have an account <a href="#" id="popup-link">SignUp</a></span>
+            </div>
+            <div class="new-links-container" id="new-links">
             </div>
         </form>
         </div>
     </div>
 </body>
+
+<script>
+    // Function to add two new links below the "Sign Up" link
+    function addNewLinks() {
+        const newLinksContainer = document.getElementById('new-links');
+        
+        // Create the first new anchor tag
+        const newLink1 = document.createElement('a');
+        newLink1.href = '#';
+        newLink1.textContent = 'As a student';
+        newLink1.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('New Link 1 clicked');
+            // Add functionality for New Link 1 here
+        });
+
+        // Create the second new anchor tag
+        const newLink2 = document.createElement('a');
+        newLink2.href = '#';
+        newLink2.textContent = 'As a mentor';
+        newLink2.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('New Link 2 clicked');
+            // Add functionality for New Link 2 here
+        });
+
+        // Append the new anchor tags to the container
+        newLinksContainer.appendChild(newLink1);
+        newLinksContainer.appendChild(newLink2);
+    }
+
+    // Event listener for the "Sign Up" link click
+    document.getElementById('popup-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        addNewLinks(); // Add two new links below the "Sign Up" link
+    });
+</script>
 </html>

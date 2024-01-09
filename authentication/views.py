@@ -20,7 +20,7 @@ def login(request):
     if next_url:
         request.session["next_url"] = next_url
     if request.method == "POST":
-        username = request.POST["username"]
+        username = request.POST["email"]
         password = request.POST["password"]
 
         if username == "" and password == "":
@@ -35,7 +35,7 @@ def login(request):
                     del request.session["next_url"]
                     return redirect(next_url)
 
-                return HttpResponseRedirect("/")
+                return redirect("/dashboard")
             else:
                 messages.error(request, "Invalid username or password")
                 return redirect(request.path_info)

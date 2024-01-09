@@ -24,3 +24,8 @@ function reveal(){
 }
 
 window.addEventListener("scroll",reveal);
+window.addEventListener('load', function() {
+    var loader = document.getElementById('loading');
+    loader.classList.add("loader--hidden");
+    // loader.style.display= "none";
+});
