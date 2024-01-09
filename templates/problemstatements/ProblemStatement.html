@@ -18,62 +18,20 @@
   </header>
 
   <main>
+    {% for statement in statements %}
     <div class="card">
       <div class="top">
-        <h2>Problem Statement 0</h2>
+        <h2>{{statement.title}}</h2>
         <div class="mentor-details">
-          <h4>Mentor: Gannamraju Satyanarayana</h4>
-          <h4>Contact: Satya@example.com</h4>
+          <h4>Mentor: {{statement.mentor_name}}</h4>
+          <h4>Contact: {{statement.contact_mail}}</h4>
         </div>
       </div>
-      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
-        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
-        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
-        quam reprehenderit vitae.</p>
+      <p>{{statement.description}}</p>
       <button>View Details</button>
     </div>
-    <div class="card">
-      <div class="top">
-        <h2>Problem Statement 1 </h2>
-        <div class="mentor-details">
-          <h4>Mentor: Gannamraju Satyanarayana</h4>
-          <h4>Contact: Satya@example.com</h4>
-        </div>
-      </div>
-      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
-        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
-        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
-        quam reprehenderit vitae.</p>
-      <button>View Details</button>
-    </div>
-    <div class="card">
-      <div class="top">
-        <h2>Problem Statement 2</h2>
-        <div class="mentor-details">
-          <h4>Mentor: Gannamraju Satyanarayana</h4>
-          <h4>Contact: Satya@example.com</h4>
-        </div>
-      </div>
-      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
-        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
-        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
-        quam reprehenderit vitae.</p>
-      <button>View Details</button>
-    </div>
-    <div class="card">
-      <div class="top">
-        <h2>Problem Statement 3</h2>
-        <div class="mentor-details">
-          <h4>Mentor: Gannamraju Satyanarayana</h4>
-          <h4>Contact: Satya@example.com</h4>
-        </div>
-      </div>
-      <p>Description of the problem statement goes here. Provide detailed information about the problem, requirements,
-        and any specific instructions. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae at iusto
-        molestiae voluptatem voluptates! Ratione, obcaecati dolor magni nostrum harum amet ad quidem quos quis eos non,
-        quam reprehenderit vitae.</p>
-      <button>View Details</button>
-    </div>
+    {% endfor %}
+    
 
     <div class="pagination">
       <button>&lt;&lt; Prev</button>
