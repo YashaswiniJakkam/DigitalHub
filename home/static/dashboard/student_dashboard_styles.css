@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 6; }
+.div2 { grid-area: 2 / 1 / 6 / 2; }
+.div3 { grid-area: 2 / 2 / 6 / 6; }
+
+div.header{
+    /* background-color: #092c64; */
+    color: #092c64;
+    text-align: center; 
+    width:100%;
+    height:75px;
+    font-size: 25px;
+    /* position:fixed; */
+    align-items: center;
+    z-index:1000;
+}
+
+
+ .div2{
+    margin: 0;
+    padding: 0;
+    width:auto;
+    background-color: #092c64;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* position:fixed; */
+    height:100%;
+    overflow:auto;
+     z-index:1;
+}
+.div2 a{
+    color: #a9a7a7;
+     padding:16px; 
+    font-size:25px;
+    text-decoration: none;
+    display: block;
+}
+.div2 a.active{
+    background-color:#a4a4a4;
+    color:#092c64;
+}
+
+.div2 a:hover:not(.active){
+    background-color:#092c64;
+    color: #f1f1f1;
+}
+.div2 a:hover(.active){
+    color: #f1f1f1;
+}
+
+.recommended,.Trending{
+    overflow-y: scroll;
+    display: block;
+    float: left;
+    margin-top: 30px;
+    /* margin-left: 70px; */
+    width: 100%;
+    height: 600px;
+    padding-bottom: 20px;
+    overflow:scroll;
+    background-color: azure;
+    /* display: flex;
+    flex-direction: row; */
+}
+.img-top{
+    /* display: flex; */
+    /* flex-direction: row; */
+    width: 250px;
+    height: 250px;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 25px;
+}
+.card{
+    box-shadow: gray;
+    margin-top: 60px;
+    /* display: flex; */
+    /* flex-direction: row;  */
+    width:400px;  
+
+     margin-left: 60px; 
+    float: left;
+    /* box-shadow: 10px 10px lightblue; */
+    border-radius: 25px;
+    border-color: black;
+     /* background-color: aqua;  */
+     height: 500px; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+    
+}
+.card-title{
+    font-size: 20px;
+    text-align: center;
+}
+.card-body{
+    margin-top: 30px;
+}
+ .card-body .card-link{
+    background-color: #092c64;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    align-self: center;
+    text-decoration: none;
+    margin-left: 40px;
+    
+}
+
+ .card-link a{
+    color: wheat;
+    text-decoration: none;
+
+}  

@@ -1,90 +1,37 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>login</title>
-  <link rel="stylesheet" href="{% static './login/login.css' %}" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
-  <div class="home">
-    <div class="images">
-      <img src="{% static './login/login.png' %}" width="300px" height="300px">
-    </div>
-    <div class="form_container">
-      <div class="form login_form">
-        <h2>Login</h2>
-        <div class="input_box">
-          <input type="email" placeholder="Enter your email" required />
+    <div class="container">
+        <div class="name">
+            <h3>Login</h3>
         </div>
-        <div class="input_box">
-          <input type="password" id="confirm-password" placeholder="Enter your password" required>
-          <div class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
-            <i class="fa fa-eye" id="eye-icon-confirm"></i>
-          </div>
-        </div>
-        <div class="option_field">
-          <a href="#" class="password">Forgot password?</a>
-        </div>
-        <button class="log">Log In</button>
-        <div class="container">Don't have an account?
-          <a href="#" id="signupButton">Sign Up</a>
-          <div class="popup" id="registrationPopup">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>Select Registration Type</h2>
-            <div class="popup-content">
-              <button onclick="openRegistrationPage('mentor')">Mentor</button>
-              <button onclick="openRegistrationPage('student')">student</button>
+        <form action="" class="login-form">
+            <div class="email-div">
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" name="email" id="" placeholder="Enter email">
             </div>
-          </div>
+            <div class="password-div">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" name="password" id="" placeholder="Enter password">
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Submit">
+            </div>
+            <div class="sign-up">
+                <span>Don't have an account <a href="#">SignUp</a></span>
+            </div>
+        </form>
         </div>
-      </div>
     </div>
-  </div>
-  <script>
-    function togglePasswordVisibility(passwordFieldId) {
-      const passwordField = document.getElementById(passwordFieldId);
-      const eyeIconId = passwordFieldId === 'password' ? 'eye-icon' : 'eye-icon-confirm';
-      const eyeIcon = document.getElementById(eyeIconId);
-
-      if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        eyeIcon.classList.remove('fa-eye');
-        eyeIcon.classList.add('fa-eye-slash');
-      } else {
-        passwordField.type = 'password';
-        eyeIcon.classList.remove('fa-eye-slash');
-        eyeIcon.classList.add('fa-eye');
-      }
-    }
-    const signupButton = document.getElementById("signupButton");
-    const registrationPopup = document.getElementById("registrationPopup");
-
-    signupButton.addEventListener("click", openPopup);
-
-    function openPopup() {
-      registrationPopup.style.display = "block";
-    }
-
-    function closePopup() {
-      registrationPopup.style.display = "none";
-    }
-
-    function openRegistrationPage(registrationType) {
-      if (registrationType === 'mentor') {
-        window.location.href = 'mentor.html'; // Replace with the actual URL for the mentor registration page
-      } else if (registrationType === 'student') {
-        window.location.href = 'student.html'; // Replace with the actual URL for the student registration page
-      }
-
-      closePopup();
-    }
-
-  </script>
 </body>
-
 </html>

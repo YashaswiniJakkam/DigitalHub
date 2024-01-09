@@ -53,7 +53,7 @@ header {
 
 #nav-container {
   width: 100%;
-  min-height: 5vh;
+  min-height: 10vh;
   display: flex;
   justify-content: space-between;
   padding: 0 3vw 0 3vw;

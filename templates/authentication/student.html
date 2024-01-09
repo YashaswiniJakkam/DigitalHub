@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,111 +10,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
+
 <body>
     <div class="container">
         <div class="title"> Student Registration</div>
-        <form action="#" onsubmit="return validateForm()" id="registrationForm">
+        <form method="post" action="{% url 'authentication:studentRegister' %}" id="registrationForm">
+            {% csrf_token %}
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
-                    <input type="text"  placeholder="Enter your name" 
-                     title = "Enter full name " required>
+                    <input type="text" placeholder="Enter your name" name="name" title="Enter full name " required>
                 </div>
                 <div class="input-box">
                     <span class="details">Student-ID</span>
-                    <input type="text" placeholder="Enter your Roll-number" 
-                     title = " Enter a valid Roll-no " required>
+                    <input type="text" placeholder="Enter your Roll-number" name="rollno" title=" Enter a valid Roll-no " required>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" placeholder="Enter your Email" pattern="[a-zA-Z0-9._]+@[a-zA-Z.]+\.[a-zA-Z]{2,}"
-                     title="Enter a valid Email Address" required>
+                    <input type="email" placeholder="Enter your Email" name="email" title="Enter a valid Email Address" required>
                 </div>
                 <div class="input-box">
-    <span class="details">Create Password</span>
-    <input type="password" id="password" placeholder="Enter Password"
-        pattern="(?=.*\d)(?=.*[!@#$^&*()_+{}\[\]:;<>,.?~\\-]).{8}" maxlength="8"
-        title="Password must be at least 8 characters and include at least one special character" class="password-input" required>
-    <div class="toggle-password" onclick="togglePasswordVisibility('password')">
-        <i class="fas fa-eye" id="eye-icon"></i>
-    </div>
-</div>
+                    <span class="details">Create Password</span>
+                    <input type="password" id="password" placeholder="Enter Password" name="password"
+                        pattern="(?=.*\d)(?=.*[!@#$^&*()_+{}\[\]:;<>,.?~\\-]).{8}" maxlength="8"
+                        title="Password must be at least 8 characters and include at least one special character"
+                        class="password-input" required>
+                    <div class="toggle-password" onclick="togglePasswordVisibility('password')">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </div>
+                </div>
 
-<div class="input-box">
-    <span class="details">Confirm Password</span>
-    <input type="password" id="confirm-password" placeholder="Confirm Password"
-        pattern="(?=.*\d)(?=.*[!@#$^&*()_+{}\[\]:;<>,.?~\\-]).{8}" maxlength="8"
-        title="Password must be at least 8 characters and include at least one special character" class="password-input" required>
-    <div class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
-        <i class="fas fa-eye" id="eye-icon-confirm"></i>
-    </div>
-</div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password"
+                        pattern="(?=.*\d)(?=.*[!@#$^&*()_+{}\[\]:;<>,.?~\\-]).{8}" maxlength="8" name="confirm password"
+                        title="Password must be at least 8 characters and include at least one special character"
+                        class="password-input" required>
+                    <div class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
+                        <i class="fas fa-eye" id="eye-icon-confirm"></i>
+                    </div>
+                </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="tel" placeholder="Enter your Mobile Number"  pattern="[0-9]{10}" maxlength="10" 
-                    title="Enter a 10-digit Phone Number" required>
+                    <input type="tel" placeholder="Enter your Mobile Number" name="phoneno" pattern="[0-9]{10}" maxlength="10"
+                        title="Enter a 10-digit Phone Number" required>
                 </div>
                 <div class="input-box">
                     <span class="details">University Name</span>
-                    <input type="text" placeholder="Enter your University Name" 
-                    title="Enter a University Name" required>
+                    <input type="text" placeholder="Enter your University Name" name="universityname" title="Enter a University Name"
+                        required>
                 </div>
                 <div class="input-box">
                     <span class="details">College Name</span>
-                    <input type="text" placeholder="Enter your  College Name" 
-                    title="Enter a College Name" required>
+                    <input type="text" placeholder="Enter your  College Name" name="collegename" title="Enter a College Name" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Department</span>
-                    <input type="text" placeholder="Enter Branch Name"
-                    title="Enter Department Name" required>
+                    <input type="text" placeholder="Enter Branch Name" name="dept" title="Enter Department Name" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Date of Birth</span>
-                    <input type="date" id="dob" required>
-                </div>   
+                    <input type="date" id="dob" name="dob" required>
+                </div>
             </div>
 
-        <div class="button">
-            <input type="submit" value="Register">
-        </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
         </form>
         <script>
             function validateForm() {
                 var password = document.getElementById("password").value;
                 var confirmPassword = document.getElementById("confirmPassword").value;
-        
+
                 if (password !== confirmPassword) {
                     alert("Passwords do not match");
-                    return false;        
+                    return false;
                 }
                 var form = document.getElementById("registrationForm");
                 alert("registration successful");
                 form.reset();
                 return true;
-}
-                function togglePasswordVisibility(passwordFieldId) {
-        const passwordField = document.getElementById(passwordFieldId);
-        const eyeIconId = passwordFieldId === 'password' ? 'eye-icon' : 'eye-icon-confirm';
-        const eyeIcon = document.getElementById(eyeIconId);
+            }
+            function togglePasswordVisibility(passwordFieldId) {
+                const passwordField = document.getElementById(passwordFieldId);
+                const eyeIconId = passwordFieldId === 'password' ? 'eye-icon' : 'eye-icon-confirm';
+                const eyeIcon = document.getElementById(eyeIconId);
 
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            eyeIcon.classList.remove('fa-eye');
-            eyeIcon.classList.add('fa-eye-slash');
-        } else {
-            passwordField.type = 'password';
-            eyeIcon.classList.remove('fa-eye-slash');
-            eyeIcon.classList.add('fa-eye');
-        }
-    }
-                
-            
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    eyeIcon.classList.remove('fa-eye');
+                    eyeIcon.classList.add('fa-eye-slash');
+                } else {
+                    passwordField.type = 'password';
+                    eyeIcon.classList.remove('fa-eye-slash');
+                    eyeIcon.classList.add('fa-eye');
+                }
+            }
+
+
         </script>
         <div class="login-link">
-            <p>Already Have an Account?<a href="login.html">Login</a></p>
+            <p>Already Have an Account?<a href="/auth/login">Login</a></p>
         </div>
     </div>
-   
+
 </body>
+
 </html>

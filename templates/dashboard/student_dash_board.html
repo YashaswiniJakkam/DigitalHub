@@ -1,0 +1,55 @@
+{% load static%}
+<html>
+
+<head>
+  <link rel="stylesheet" href="{% static 'dashboard/student_dashboard_styles.css'%}">
+  <link rel="stylesheet" href="{% static 'homepage/styles.css'%}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;500&family=Quicksand:wght@300;500&display=swap&family=Teko:wght@300&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- {% include 'home/navbar.html' %} -->
+  <!-- 
+
+  <div class="sidenav">
+    <ul>
+      <li><a href="#" class="active">Profile</a></li>
+
+      <li><a href="#">My Courses</a></li>
+      <li><a href="#">My Problem Statement</a></li>
+
+      <li><a href="#">My Acheivements</a></li>
+
+      <li><a href="#">Logout</a></li>
+    </ul>
+
+  </div> -->
+
+  <div class="parent">
+    <div class="div1">{% include 'home/navbar.html' %} </div>
+    <div class="div2">
+      
+        <a href="#" class="active">Profile</a>
+
+        <a href="#">My Courses</a>
+        <a href="#">My Problem Statement</a>
+
+        <a href="#">My Acheivements</a>
+
+        <a href="/auth/logout">Logout</a>
+    </div>
+    <div class="div3">
+      <div class="header">
+        <h1>Student DashBoard</h1>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

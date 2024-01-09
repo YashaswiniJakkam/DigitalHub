@@ -9,3 +9,5 @@ def problemstatements(request):
 
 def courses(request):
 	return render(request, "./courses/courses.html")
+def dashboard(request):
+	return render(request, "./dashboard/student_dash_board.html")

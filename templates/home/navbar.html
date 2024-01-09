@@ -10,6 +10,9 @@
 		<a href="#consultancy">Consultancy</a>
 		<a href="#gallery">Gallery</a>
 		<a href="#contact">Contact</a>
+		{% if user.is_authenticated %}
+		<a href="/dashboard">Dashboard</a>
+		{% else %}
 		<div class="register-dropdown">
 			<div class="register-button">Register</div>
 			<div class="register-options">
@@ -18,6 +21,7 @@
 			</div>
 		</div>
 		<a href="/auth/login">Login</a>
+		{%endif%}
 	</div>
 	<div class="hamburger" onclick="responsive_nav()">
 			<i class="fa fa-bars"></i>

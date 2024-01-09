@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
-import uuid
+from django.http import HttpResponse
 from .models import *
-from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from .models import Mentor
 
 # Create your views here.
 
@@ -44,9 +44,78 @@ def login(request):
     return render(request, "./authentication/login.html", {"messages": messages.get_messages(request)})
 
 def mentorRegister(request):
+    if request.method == 'POST':
+        # Retrieve data from the form
+        full_name = request.POST.get('full_name')
+        employee_id = request.POST.get('employee_id')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        phone_number = request.POST.get('phone_number')
+        expertise = request.POST.get('domain')
+        college_name = request.POST.get('college_name')
+        department = request.POST.get('department')
+        years_of_experience = request.POST.get('years_of_experience')
+        print(full_name,email)
+
+        if User.objects.filter(email=email).exists():
+            return HttpResponse("Email is already registered. Please use a different email.")
+        
+        user = User.objects.create_user(username=email, email=email, password=password)
+
+        mentor = Mentor.objects.create(
+            full_name=full_name,
+            employee_id=employee_id,
+            email=email,
+            phone_number=phone_number,
+            expertise=expertise,
+            college_name=college_name,
+            department=department,
+            years_of_experience=years_of_experience
+        )
+
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            auth.login(request,user)
+
+        return HttpResponse("Registration successful. You are now logged in.")
+    
     return render(request, './authentication/mentor.html')
 
 def studentRegister(request):
+    if request.method == 'POST':
+        # Get form data
+        full_name = request.POST['name']
+        student_id = request.POST['rollno']
+        email = request.POST['email']
+        password = request.POST['password']
+        phone_number = request.POST['phoneno']
+        university_name = request.POST['universityname']
+        college_name = request.POST['collegename']
+        department = request.POST['dept']
+        date_of_birth = request.POST['dob']
+
+        # Create a user in Django's authentication system
+        user = User.objects.create_user(username=email, email=email, password=password)
+
+        # Create a Student instance
+        student = Student.objects.create(
+            full_name=full_name,
+            student_id=student_id,
+            email=email,
+            phone_number=phone_number,
+            university_name=university_name,
+            college_name=college_name,
+            department=department,
+            date_of_birth=date_of_birth
+        )
+
+        # Log the user in
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'Registration successful. You are now logged in.')
+            return redirect('/dashboard')  
     return render(request, './authentication/student.html')
 
 def ResetPassword(request , token):
