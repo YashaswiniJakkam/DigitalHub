@@ -1,68 +1,118 @@
-*{
-    margin:0;
-    padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Audiowide&family=Barlow+Condensed:wght@100;500&family=Quicksand:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Quicksand;
     box-sizing: border-box;
+    color: #092c64;
 }
 
 .parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 0.3fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
 }
 
-.div1 { grid-area: 1 / 1 / 2 / 6; }
-.div2 { grid-area: 2 / 1 / 6 / 2; }
-.div3 { grid-area: 2 / 2 / 6 / 6; }
-
-div.header{
-    /* background-color: #092c64; */
-    color: #092c64;
-    text-align: center; 
-    width:100%;
-    height:75px;
-    font-size: 25px;
-    /* position:fixed; */
-    align-items: center;
-    z-index:1000;
+.div2 {
+    grid-area: 1 / 1 / 6 / 2;
 }
 
-
- .div2{
-    margin: 0;
-    padding: 0;
-    width:auto;
-    background-color: #092c64;
+.div3 {
+    grid-area: 1 / 2 / 6 / 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* position:fixed; */
-    height:100%;
-    overflow:auto;
-     z-index:1;
 }
-.div2 a{
-    color: #a9a7a7;
-     padding:16px; 
-    font-size:25px;
+
+
+div.header {
+    /* background-color: #092c64; */
+    color: #092c64;
+    text-align: center;
+    width: 100%;
+    height: 75px;
+    font-size: 25px;
+    /* position:fixed; */
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.div2 {
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* position:fixed; */
+    box-sizing: border-box;
+    border-radius: 0 2rem 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    overflow: auto;
+    z-index: 1;
+    position: sticky;
+}
+
+.div2 a {
+    color: #092c64;
     text-decoration: none;
+    padding: 20px;
+    font-size: 25px;
+    /* text-decoration: none;
+    border: 0.1rem #092c64;
+    box-shadow: 0 2px 4px rgba(0,0,0,0,5); */
     display: block;
 }
-.div2 a.active{
-    background-color:#a4a4a4;
-    color:#092c64;
+
+.profile-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-.div2 a:hover:not(.active){
-    background-color:#092c64;
-    color: #f1f1f1;
+.profile-img img {
+    height: 80px;
+    width: 80px;
 }
-.div2 a:hover(.active){
+
+.change-img-button {
+    margin: 15px;
+    padding: 8px;
+    color: #092c64;
+    font-weight: bolder;
+    /* border: 0.1rem solid #092c64; */
+    border: none;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.div2 a.active {
+    background-color: #a4a4a4;
+    color: #092c64;
+}
+
+.div2 a:hover:not(.active) {
+    background-color: #092c64;
     color: #f1f1f1;
 }
 
-.recommended,.Trending{
+.div2 a:hover(.active) {
+    color: #f1f1f1;
+}
+
+.recommended,
+.Trending {
     overflow-y: scroll;
     display: block;
     float: left;
@@ -71,46 +121,51 @@ div.header{
     width: 100%;
     height: 600px;
     padding-bottom: 20px;
-    overflow:scroll;
+    overflow: scroll;
     background-color: azure;
     /* display: flex;
     flex-direction: row; */
 }
-.img-top{
+
+.img-top {
     /* display: flex; */
     /* flex-direction: row; */
     width: 250px;
     height: 250px;
-  padding: 5px;
-  margin-top: 20px;
-  border-radius: 25px;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 25px;
 }
-.card{
+
+.card {
     box-shadow: gray;
     margin-top: 60px;
     /* display: flex; */
     /* flex-direction: row;  */
-    width:400px;  
+    width: 400px;
 
-     margin-left: 60px; 
+    margin-left: 60px;
     float: left;
     /* box-shadow: 10px 10px lightblue; */
     border-radius: 25px;
     border-color: black;
-     /* background-color: aqua;  */
-     height: 500px; 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-    
+    /* background-color: aqua;  */
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+
 }
-.card-title{
+
+.card-title {
     font-size: 20px;
     text-align: center;
 }
-.card-body{
+
+.card-body {
     margin-top: 30px;
 }
- .card-body .card-link{
+
+.card-body .card-link {
     background-color: #092c64;
     border-radius: 10px;
     color: white;
@@ -118,11 +173,103 @@ div.header{
     align-self: center;
     text-decoration: none;
     margin-left: 40px;
-    
+
 }
 
- .card-link a{
+.card-link a {
     color: wheat;
     text-decoration: none;
 
-}  
+}
+
+.header {
+    margin-top: 5px;
+}
+
+.img-div {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.content1 {
+    width: 50%;
+    padding-right: 1%;
+    padding-top: 20px;
+}
+
+.content2 {
+    width: 50%;
+    padding-right: 1%;
+    padding-top: 20px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-bottom: 50px;
+    /* width:100%; */
+    /* border: 2rem; */
+
+}
+
+hr {
+    margin-top: 7px;
+}
+
+.img-div {
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+.fa-solid {
+    font-size: 25px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.password-div {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.password-div a {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    text-decoration: none;
+}
+
+.password-div a h2 {
+    padding-right: 16px;
+}
+
+.label h2 a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width:768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .content1,
+    .content2 {
+        width: 100%;
+        padding-right: 0;
+        padding-top: 10px;
+    }
+}

@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
 }
 body {
     display: flex;
@@ -10,20 +9,27 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+    background: #fff; 
+    font-family: 'Quicksand';   
+}
+.required-asterik{
+    color: red;
 }
 .container{
     max-width: 500px;
-    max-height: 700px;
+    max-height: 1500px;
     width: 100%;
-    background: #fff;
+    background: #c9c8c8;
     padding: 25px 30px;
     border-radius: 5px;
+    box-shadow: 1px 1px 6px grey;
 }
 .container .title {
-    font-size: 25px;
+    font-size: 45px;
     font-weight: 500;
     position: relative;
+    color: #07279a;
+    font-family: 'Quicksand';
 }
 
 .container .title::before {
@@ -33,28 +39,31 @@ body {
     bottom: 0;
     height: 3px;
     width: 30px;
-    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+    background: linear-gradient(135deg,#06609c,#76acdc);
 }
 .container form .user-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 form .user-details .input-box {
     margin: 20px 0 12px 0;
     width:calc(100% / 2 - 20px);
+    /*width: 100%;*/
 }
 .user-details .input-box .details {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
+    color: #07279a;
 }
 .user-details .input-box input{
     height: 45px;
     width: 100%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #07279a;
     padding-left: 15px;
 }
 form .button {
@@ -65,13 +74,13 @@ form .button input{
     height: 100%;
     width: 100%;
     outline: none;
-    color: black;
+    color: #fff;
     border: none;
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
     letter-spacing: 1px;
-    background: linear-gradient(135deg,#71b7eb,#9b59b6);
+    background: #192655;
 }
 .user-details .input-box input[type="date"]{
     height:45px;
@@ -88,20 +97,25 @@ form .button input{
 .login-link {
     margin-top: 20px;
     text-align: center;
+    font-size: 20px;
 }
 .login-link p{
-    font-size: 14px;
-    color: #333;
+    font-size: 18px;
+    color: #07279A;
 }
 .login-link a {
-    color: #9b59b6;
+    color: #07279A;
     text-decoration: none;
     font-weight: bold;
 }
 .login-link a:hover{
     text-decoration: underline;
+    color:#333;
+    size: 10px;
 }
-
+i{
+    color: #595858;
+}
  .input-box {
 	    width: 300px;
             margin: 20px;
@@ -123,3 +137,21 @@ form .button input{
             cursor: pointer;
             margin-top: 5px;
         }
+@media screen and (max-width:600px){
+    .container{
+        max-width: 100%;
+    }
+    .container form .user-details .input-box{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:601px){
+    .container {
+        max-width: 800px;
+    }
+    .container form .user-details .input-box{
+        width: calc(50% -20px);
+    }
+}
+

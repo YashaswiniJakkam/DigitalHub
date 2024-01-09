@@ -3,12 +3,11 @@
     height: 45px;
     font-size: 18px; /* Adjust the size as needed */
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Quicksand';
 }
 body {
     display: flex;
@@ -20,7 +19,7 @@ body {
 }
 .container{
     max-width: 500px;
-    max-height: 700px;
+    max-height: 1500px;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
@@ -28,12 +27,19 @@ body {
     box-shadow: 1px 1px 6px grey;
 }
 .container .title {
-    font-size: 25px;
+    font-size: 45px;
     font-weight: 500;
     position: relative;
     color: #07279A;
-}
+    font-family: 'Quicksand';
 
+}
+.required-asterik{
+    color: red;
+}
+i{
+    color: #595858;
+}
 .container .title::before {
     content:'';
     position: absolute;
@@ -94,16 +100,19 @@ form .button input{
     -moz-appearance: none;
     appearance: none;
 }
+#domain{
+    font-size: 13px;
+}
 .login-link {
     margin-top: 20px;
     text-align: center;
 }
 .login-link p{
-    font-size: 14px;
-    color: #333;
+    font-size: 18px;
+    color: #07279A;
 }
 .login-link a {
-    color: #333;
+    color: #07279A;
     text-decoration: none;
     font-weight: bold;
 }
@@ -132,3 +141,20 @@ form .button input{
             cursor: pointer;
             margin-top: 5px;
         }
+        @media screen and (max-width:600px){
+            .container{
+                max-width: 100%;
+            }
+            .container form .user-details .input-box{
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width:601px){
+            .container {
+                max-width: 800px;
+            }
+            .container form .user-details .input-box{
+                width: calc(50% -20px);
+            }
+        }        
