@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="{% static 'login/login.css'%}">
 </head>
 <body>
+    <div class="login-img">
+        <img src="{% static 'login/login_img.png' %}" alt="" class="src">
+    </div>
     <div class="container">
         <div class="jntu-img">
             <img src="{% static 'login/logo.png' %}" alt="" class="src" height="120px" width="120px">
         </div>
+        <hr>
         <div class="name">
-            <h3>Login</h3>
+            <h3>Digital Hub</h3>
         </div>
+        <hr style="margin-bottom:10px;">
         <form method="post" action="{% url 'authentication:login'%}" class="login-form">
             {%csrf_token%}
             <div class="email-div">
