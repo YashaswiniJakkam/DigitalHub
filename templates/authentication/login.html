@@ -49,23 +49,15 @@
         
         // Create the first new anchor tag
         const newLink1 = document.createElement('a');
-        newLink1.href = '#';
+        newLink1.href = '/auth/studentRegistration';
         newLink1.textContent = 'As a student';
-        newLink1.addEventListener('click', function(event) {
-            event.preventDefault();
-            console.log('New Link 1 clicked');
-            // Add functionality for New Link 1 here
-        });
+        
 
         // Create the second new anchor tag
         const newLink2 = document.createElement('a');
-        newLink2.href = '#';
+        newLink2.href = '/auth/mentorRegistration';
         newLink2.textContent = 'As a mentor';
-        newLink2.addEventListener('click', function(event) {
-            event.preventDefault();
-            console.log('New Link 2 clicked');
-            // Add functionality for New Link 2 here
-        });
+        
 
         // Append the new anchor tags to the container
         newLinksContainer.appendChild(newLink1);
