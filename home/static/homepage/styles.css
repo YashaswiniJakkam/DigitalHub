@@ -22,7 +22,6 @@ header {
 }
 
 #jntu-logo img {
-
   height: 8vw;
   margin-top: auto;
   margin-bottom: auto;
@@ -82,6 +81,7 @@ header {
   color: white;
   font-family: "Audiowide", sans-serif;
   font-size: 2rem;
+  user-select: none;
 }
 
 .hamburger {
@@ -167,65 +167,11 @@ header {
 }
 
 @media screen and (max-width: 900px) {
-  /* .nav a:not(.icon),
-
-  .register-dropdown .register-button {
-    display: none;
-  }
-
-  .nav a.icon {
-    display: flex;
-  }
-
-  .nav:not(.responsive) {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .register-dropdown {
-    float: none;
-    width: 100%;
-  }
-
-  .register-options {
-    position: static;
-  }
-
-  .register-dropdown:hover .register-options {
-    display: none;
-  }
-
-  .nav.responsive {
-    position: relative;
-  }
-
-  .nav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .nav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav.responsive .register-dropdown {
-    float: none;
-  }
-
-  .nav.responsive .register-dropdown .register-button {
-    display: block;
-    width: 100%;
-    text-align: left;
-  } */
 
   .hamburger {
     display: block;
     position: absolute;
-    transform: translateY(7%);
+    transform: translateY(25%);
     font-size: 1.8rem;
     right: 3%;
   }
@@ -235,7 +181,6 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    z-index: 100;
     padding: 3% 0%;
   }
 

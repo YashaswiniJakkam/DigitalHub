@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from .models import *
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
-from .models import Mentor
+from django.contrib.auth import authenticate
+from .models import *
 
 # Create your views here.
 
@@ -63,6 +62,12 @@ def mentorRegister(request):
         
         user = User.objects.create_user(username=email, email=email, password=password)
 
+        user_profile = UserProfile.objects.create(
+            user=user,
+            role='mentor'
+        )
+
+
         mentor = Mentor.objects.create(
             full_name=full_name,
             employee_id=employee_id,
@@ -97,6 +102,11 @@ def studentRegister(request):
 
         # Create a user in Django's authentication system
         user = User.objects.create_user(username=email, email=email, password=password)
+        
+        user_profile = UserProfile.objects.create(
+            user=user,
+            role='student'
+        )
 
         # Create a Student instance
         student = Student.objects.create(
@@ -192,16 +202,17 @@ def ResetPassword(request , token):
 #code for changing password
 @login_required
 def changepassword(request):
-    return render(request,"changepwd.html")
+    return render(request,"authentication/changepassword.html")
 
 
 @login_required
 def changingpwd(request):
     if request.method == "POST":
         try:
-            oldpassword = request.POST.get("oldpassword")
-            newpass = request.POST.get("newpassword")
-            newpass2 = request.POST.get("newpassword2")
+            oldpassword = request.POST.get("oldPassword")
+            newpass = request.POST.get("newPassword")
+            newpass2 = request.POST.get("confirmPassword")
+            # print(oldpassword,newpass,newpass2)
             
             user = request.user
             if user.check_password(oldpassword) :
@@ -219,7 +230,7 @@ def changingpwd(request):
             messages.error(request, 'User does not exist')
         except Exception as e:
             messages.error(request,e)
-    else:
-        pass
+    # else:
+    #     pass
     
     return render(request,"changepwd.html")

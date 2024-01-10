@@ -10,6 +10,6 @@ urlpatterns = [
 	path("mentorRegistration/", views.mentorRegister, name="mentorRegister"),
 	path("studentRegistration/", views.studentRegister, name="studentRegister"),
     path("reset_password/<token>/",views.ResetPassword,name="resetpassword"),
-    path("changepassword/",views.changepassword,name="changepassword"),
+    path("changePassword/",views.changepassword,name="changepassword"),
     path("changingpwd/",views.changingpwd,name="changingpwd"),
 ]
