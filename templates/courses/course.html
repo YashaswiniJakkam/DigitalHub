@@ -1,0 +1,72 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'courses/course.css'%}">
+    <title>course page</title>
+</head>
+
+<body>
+    {% include 'home/navbar.html'   %}
+    <section class="course">
+        <div class="title">
+            <h1 class="statement">{{statement.title}}</h1>
+        </div>
+        <hr class="divider">
+        <div class="bodycontent">
+            <div class="lhs">
+                <div class="details-card">
+                    <h3>About the course:</h3>
+                    <div class="details desc">
+                        <p>{{statement.description}}</p>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Prerequisites :</h3>
+                    <!-- <div class="list">
+                        <h4>Technologies </h4>
+                        <ul>
+                          <li><span>MongoDb</span></li>
+                          <li><span>Express Js</span></li>
+                          <li><span>Node Js</span></li>
+                          <li><span>React Js</span></li>
+                          <li><span>HTML</span></li>
+                        </ul>
+                    </div> -->
+                    <div class="details about">
+                        <h4>Books & References</h4>
+                        <p>{{statement.prerequisites}}
+                        </p>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- right -->
+            <div class="rhs">
+                <!-- mentor -->
+                <h3>Instructor details:</h3>
+                <div class="mentorcard">
+                    <div class="card_content">
+                            <div class="card_img">
+                                {% if statement.mentor_pic %}  
+                                <img src="{%static 'mentor_pics/Passport_Photograph1000X1000.jpg'%}" alt="mentor pic">
+                                {% endif %}
+                            </div>
+                            <div class="card_details">
+                                <div class="name">G Satyanarayana</div>
+                                <div class="qual">B.tech,M.tech</div>
+                                <div class="college">Jntu-Gv</div>
+                                <div class="contact">Contact : gsatya@gmail.com</div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+</body>
+
+</html>
