@@ -1,0 +1,143 @@
+{% load static%}
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'dashboard/student_dashboard_styles.css'%}">
+  <link rel="stylesheet" href="{% static 'homepage/styles.css'%}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;500&family=Quicksand:wght@300;500&display=swap&family=Teko:wght@300&display=swap"
+    rel="stylesheet">
+    <!-- <link rel="stylesheet" href="D:\digitalhub git\DigitalHub\home\static\dashboard\student_dashboard_styles.css"> -->
+
+</head>
+
+<body>
+  <!-- {% include 'home/navbar.html' %} -->
+  <!-- 
+
+  <div class="sidenav">
+    <ul>
+      <li><a href="#" class="active">Profile</a></li>
+
+      <li><a href="#">My Courses</a></li>
+      <li><a href="#">My Problem Statement</a></li>
+
+      <li><a href="#">My Acheivements</a></li>
+
+      <li><a href="#">Logout</a></li>
+    </ul>
+
+  </div> -->
+
+  <div class="parent">
+    <div class="div2">
+      <div class="profile-img">
+        <img src="{% static 'dashboard/images/user.png'%}" alt="">
+        <div class="change-img">
+          <button class="change-img-button">Edit profile photo</button>
+        </div>
+      </div>
+      <a href="#" class="active">Profile</a>
+      <a href="/">Home</a>
+
+        <a href="#">My Courses</a>
+        <a href="#">My Problem Statement</a>
+
+        <a href="#">My Acheivements</a>
+
+        <a href="/auth/logout">Logout</a>
+    </div>
+    <div class="div3">
+      <div class="header">
+        <h1>Profile</h1>
+      </div>
+      <div class="profile-content">
+        <div class="content1">
+          <div id="name" class="label">
+            <h2>Name</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-user"></i>
+              <span class="info">{{data.full_name}}</span>
+            </div>
+            <hr>
+          </div>
+          
+          <div id="gmail" class="label">
+            <h2>Gmail</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="info">{{data.email}}</span>
+            </div>
+            <hr>
+          </div>
+          
+          <div id="college-name" class="label">
+            <h2>College Name</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span class="info">{{data.college_name}}</span>
+            </div>
+            <hr>
+          </div>
+          <div id="ph-no" class="label">
+            <h2>Phone No</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-phone"></i>
+              <span class="info">{{data.phone_number}}</span>
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div class="content2">
+          <div id="Employee-id" class="label">
+            <h2>Employee ID</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-id-badge"></i>
+              <span class="info">{{data.student_id}}</span>
+            </div>
+            <hr>
+          </div>
+          
+          <div id="Expertise" class="label">
+            <h2>Expertise</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="info">{{data.date_of_birth}}</span>
+            </div>
+            <hr>
+          </div>
+          
+          <div id="years_of_experience" class="label">
+            <h2>Years Of Experience</h2>
+            <div class="img-div">
+              <i class="fa-solid fa-building-columns"></i>
+              <span class="info">{{data.university_name}}</span>
+            </div>
+            <hr>
+          </div>
+
+          <!-- <div class="password-div">
+            <a href=""><h2>Change Password</h2><i class="fa-solid fa-pen-to-square"></i></a>
+
+          </div> -->
+          <div id="password" class="label">
+            <h2><a href="/auth/changePassword">Edit password <i class="fa-solid fa-pen-to-square"></i></a></h2>
+            <div class="img-div">
+              <i class="fa-solid fa-lock"></i>
+              <span class="info">********</span>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
