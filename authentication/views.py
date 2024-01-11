@@ -6,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from .models import *
 
-# Create your views here.
-
 
 def logout(request):
     auth.logout(request)
@@ -39,12 +37,10 @@ def login(request):
                 messages.error(request, "Invalid username or password")
                 return redirect(request.path_info)
 
-    # Render the login form
     return render(request, "./authentication/login.html", {"messages": messages.get_messages(request)})
 
 def mentorRegister(request):
     if request.method == 'POST':
-        # Retrieve data from the form
         full_name = request.POST.get('full_name')
         employee_id = request.POST.get('employee_id')
         email = request.POST.get('email')
@@ -83,7 +79,7 @@ def mentorRegister(request):
         if user is not None:
             auth.login(request,user)
 
-        return HttpResponse("Registration successful. You are now logged in.")
+        return redirect('/dashboard')
     
     return render(request, './authentication/mentor.html')
 
