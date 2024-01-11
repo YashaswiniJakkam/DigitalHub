@@ -12,5 +12,6 @@ urlpatterns = [
     path("dashboard/myProblemStatements", views.myProblemStatements, name="myProblemStatements"),
     path("problemstatements/studentProblemStatementRegister", views.studentProblemStatementRegister, name="studentProblemStatementRegister"),
     path("MentorProblemStatementRegister", views.mentorApply, name="mentorApply"),
+    path("team", views.team, name="team"),
     
 ]

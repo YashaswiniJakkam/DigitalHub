@@ -22,6 +22,9 @@ def problem_statement_detail(request, slug):
 	context = {'statement':problem_statement,'userrole':userrole,'mentors':mentors}
 	return render(request, 'problemstatements/probst.html', context)
 
+def team(request):
+	return render(request, "team/team.html")
+
 def courses(request):
 	return render(request, "./courses/courses.html")
 
