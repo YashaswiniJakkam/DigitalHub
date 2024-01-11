@@ -7,6 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'problemstatements/probst.css'%}">
     <title>{{statement.title}}</title>
+
+    <style>
+        .div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 3%;
+        }
+
+        @media screen and (max-width:782px) {
+            .div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -18,39 +36,61 @@
         <hr class="divider">
         <div class="bodycontent">
             <div class="lhs">
+                <div class="div">
+                    <div class="details-card">
+                        <h3>Prerequisites :</h3>
+                        <div class="details about">
+                            <h4>Technologies:</h4>
+                            <p>{{statement.prerequisites}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        {% if statement.status == "finished" and statement.livelink %}
+                        <div class="sec-butt">
+                            <a href="http://{{statement.livelink}}"><button>View Live <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+
+                        </div>
+                        {%else%}
+                        <div class="primary-butt">
+                            <!-- <button>Apply</button> -->
+                            {% if userrole == "mentor" %}
+                            <form action="{% url 'home:mentorApply' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" value="{{ statement.slug }}" hidden name="slug">
+                                <input type="submit" value="Apply">
+                            </form>
+                            {% else %}
+                            <form action="{% url 'home:studentProblemStatementRegister' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" value="{{ statement.slug }}" hidden name="slug">
+                                <input type="submit" value="Apply">
+                            </form>
+                            {% endif %}
+                        </div>
+                        {%endif%}
+
+
+
+                    </div>
+                </div>
                 <div class="details-card">
                     <h3>Descripton :</h3>
                     <div class="details desc">
-                        <p>{{statement.description}}</p>
+                        <p>{{statement.description|linebreaksbr}}</p>
                     </div>
                 </div>
 
-                <div class="details-card">
-                    <h3>Prerequisites :</h3>
-                    <!-- <div class="list">
-                        <h4>Technologies </h4>
-                        <ul>
-                          <li><span>MongoDb</span></li>
-                          <li><span>Express Js</span></li>
-                          <li><span>Node Js</span></li>
-                          <li><span>React Js</span></li>
-                          <li><span>HTML</span></li>
-                        </ul>
-                    </div> -->
-                    <div class="details about">
-                        <h4>Technologies:</h4>
-                        <p>{{statement.prerequisites}}
-                        </p>
-                    </div>
-
-                </div>
+                
 
             </div>
             <!-- right -->
             <div class="rhs">
                 <!-- mentor -->
-                {%if mentors%}
                 <h3>Mentor details:</h3>
+                {%if mentors%}
                 {% for mentor in mentors %}
                 <div class="mentorcard">
                     <div class="card_content">
@@ -60,45 +100,34 @@
                             {% endif %}
                         </div>
                         <div class="card_details">
-                            <div class="name">{{mentor.full_name}}</div>
-                            <div class="qual">{{mentor.department}}</div>
-                            <div class="college">{{mentor.college_name}}</div>
+                            <div class="name">Name: {{mentor.full_name}}</div>
+                            <div class="qual">Department: {{mentor.department}}</div>
+                            <div class="college">College: {{mentor.college_name}}</div>
                             <div class="contact">Contact : {{mentor.email}}</div>
                         </div>
                     </div>
                     <div>
                 {% endfor %}
+                {%else%}
+                <div class="mentorcard">
+                    <div class="card_content">
+                        <div class="card_img">
+                            {% if statement.mentor_pic %}
+                            <img src="{%static 'mentor_pics/Passport_Photograph1000X1000.jpg'%}" alt="mentor pic">
+                            {% endif %}
+                        </div>
+                        <div class="card_details">
+                            <div class="name">Name: -</div>
+                            <div class="qual">Department: -</div>
+                            <div class="college">College: -</div>
+                            <div class="contact">Contact : -</div>
+                        </div>
+                        <p>Mentor Not assigned</p>
+                    </div>
+                    <div>
                 
                     {%endif%}
-                        <div class="buttons">
-                            {% if statement.status == "finished" and statement.livelink %}
-                            <div class="sec-butt">
-                                <a href="http://{{statement.livelink}}"><button>View Live <i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
-
-                            </div>
-                            {%else%}
-                            <div class="primary-butt">
-                                <!-- <button>Apply</button> -->
-                                {% if userrole == "mentor" %}
-                                <form action="{% url 'home:mentorApply' %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="text" value="{{ statement.slug }}" hidden name="slug">
-                                    <input type="submit" value="Apply">
-                                </form>
-                                {% else %}
-                                <form action="{% url 'home:studentProblemStatementRegister' %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="text" value="{{ statement.slug }}" hidden name="slug">
-                                    <input type="submit" value="Apply">
-                                </form>
-                                {% endif %}
-                            </div>
-                            {%endif%}
-
-
-
-                        </div>
+                        
 
 
 

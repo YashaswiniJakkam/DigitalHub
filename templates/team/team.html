@@ -12,17 +12,18 @@
                 margin:0;
                 padding:0;
                 box-sizing: border-box;
-                font-family:'Quicksand';
                 text-align:center;
                 text-transform: uppercase;
                 color:#003073;
             }
-
-            body{
+            
+            .div{
+                font-family:'Quicksand';
                 justify-content: center;
                 align-items: center;
                 margin:3rem 3rem;
             }
+
             h1{
                 color:#192655;
             }
@@ -136,193 +137,187 @@
         </style>
     </head>
     <body>
-        <h1 style="font-size:3rem;">Digital Hub Committee</h1>
-        <div class="info" style="margin-top:2rem;">
-        
-        <div class="card-container">
-            <h1>Chairperson</h1>
-            <div class="card">
-                <div class="card-img"><img src="{% static 'team/images/jayasuma.jpeg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                
-                    <h3>Dr. G JayaSuma</h3>
-                    <p>Registrar, JNTU GURAJADA VIZIANAGARAM</p>
-                </div>
-               
-            </div>
-            </div>
-        
-        <div class="card-container">
-            <h1>Convener</h1>
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/anil.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                
-                    <h3>Mr Anil Wurity</h3>
-                    <p>Digital Monitoring cell Co-ordinator</p>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-    <h1>Academic Representatives</h1>
-    <div class="info acd-rep">
-        
-        <div class="card-container">
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/Arunakumari.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                
-                    <h3>Dr. P Aruna Kumari</h3>
-                    <p>Head of the department,<br>Computer science engineering (cse)</p>
-                </div>
-               
-            </div>
-            </div>
-        
-        <div class="card-container">
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/Dr.B.Tirimula-Rao.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                
-                    <h3>Dr. B Tirimula Rao</h3>
-                    <p>Head of the department,<br>Information Technology (it)</p>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <h1>Student Representatives</h1>
-        <div class="stu-rep">
+        {% include 'home/navbar.html'   %}
+        <div class="div">
+            <h1 style="font-size:3rem;">Digital Hub Committee</h1>
+            <div class="info" style="margin-top:2rem;">
             
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/srimanth.jpg'%}" alt=""></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Srimanth Kumar Tiruvayapeta</h3></dt>
-                        <dd>20VV1A11259 (IV B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-            
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/ajith.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Dannana Sai Ajith Kumar</h3></dt>
-                        <dd>21VV5A1268 (IV B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/haneesh.jpg'%}" alt=""></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Haneesh Bandaru</h3></dt>
-                        <dd>21VV1A1220 (IV B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/sandeep.jpg'%}" alt=""></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Pyla Sandeep</h3></dt>
-                        <dd>21VV1A1252 (III B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/eswar.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Aari Eswar</h3></dt>
-                        <dd>21VV1A1201 (III B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/yashaswini.jpg'%}" alt=""></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Jakkam Yashaswini</h3></dt>
-                        <dd>21VV1A0521 (III B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/satyanarayana.jpg'%}" alt="" ></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Satyanarayana</h3></dt>
-                        <dd>21VV1A0516 (III B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="{%static 'team/images/akhil.jpg'%}" alt=""></div>
-                <hr>
-                <div class="details">
-                    <dl>
-                        <dt><h3>Akhil Sai Boppudi</h3></dt>
-                        <dd>21VV1A0502 (III B.Tech)</dd>
-                    </dl>
-                </div>
-            </div>
-
-        </div>
-        <h1>Alumni Representatives</h1>
-        <div class="info alumni-rep">
-        
             <div class="card-container">
+                <h1>Chairperson</h1>
                 <div class="card">
-                    <div class="card-img"><img src="{%static 'team/images/joseph.jpg'%}" alt=""></div>
+                    <div class="card-img"><img src="{% static 'team/images/jayasuma.jpeg'%}" alt="" ></div>
                     <hr>
                     <div class="details">
-                    
-                        <h3>Joseph Kishore</h3>
-                        <p>Associate at Congnizant</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i>joekishore999@gmail.com</p>
+            
+                        <h3>Dr. G JayaSuma</h3>
+                        <p>Registrar, JNTU GURAJADA VIZIANAGARAM</p>
                     </div>
-                   
+            
+                </div>
+                </div>
+            
+            <div class="card-container">
+                <h1>Convener</h1>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/anil.jpg'%}" alt="" ></div>
+                    <hr>
+                    <div class="details">
+            
+                        <h3>Mr Anil Wurity</h3>
+                        <p>Digital Monitoring cell Co-ordinator</p>
+            
+                    </div>
+                </div>
+            </div>
+                </div>
+                <h1>Academic Representatives</h1>
+                <div class="info acd-rep">
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/Arunakumari.jpg'%}" alt="" ></div>
+                    <hr>
+                    <div class="details">
+            
+                        <h3>Dr. P Aruna Kumari</h3>
+                        <p>Head of the department,<br>Computer science engineering (cse)</p>
+                    </div>
+            
                 </div>
                 </div>
             
             <div class="card-container">
                 <div class="card">
-                    <div class="card-img"><img src="{%static 'team/images/prof_img.jpeg'%}" alt=""></div>
+                    <div class="card-img"><img src="{%static 'team/images/Dr.B.Tirimula-Rao.jpg'%}" alt="" ></div>
                     <hr>
                     <div class="details">
-                    
-                        <h3>K Y Nischala Rupini</h3>
-                        <p>Technical Business Analyst Apoorva software(Bangalore)</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i>nischalarupini.ky@gmail.com</p>
-                    
+            
+                        <h3>Dr. B Tirimula Rao</h3>
+                        <p>Head of the department,<br>Information Technology (it)</p>
+            
+                    </div>
+                </div>
+            </div>
+                </div>
+            
+            
+                <h1>Student Representatives</h1>
+            <div class="stu-rep">
+            
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/srimanth.jpg'%}" alt=""></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Srimanth Kumar Tiruvayapeta</h3></dt>
+                            <dd>20VV1A11259 (IV B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/ajith.jpg'%}" alt="" ></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Dannana Sai Ajith Kumar</h3></dt>
+                            <dd>21VV5A1268 (IV B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/haneesh.jpg'%}" alt=""></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Haneesh Bandaru</h3></dt>
+                            <dd>21VV1A1220 (IV B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/sandeep.jpg'%}" alt=""></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Pyla Sandeep</h3></dt>
+                            <dd>21VV1A1252 (III B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/eswar.jpg'%}" alt="" ></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Aari Eswar</h3></dt>
+                            <dd>21VV1A1201 (III B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/yashaswini.jpg'%}" alt=""></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Jakkam Yashaswini</h3></dt>
+                            <dd>21VV1A0521 (III B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/satyanarayana.jpg'%}" alt="" ></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Satyanarayana</h3></dt>
+                            <dd>21VV1A0516 (III B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="{%static 'team/images/akhil.jpg'%}" alt=""></div>
+                    <hr>
+                    <div class="details">
+                        <dl>
+                            <dt><h3>Akhil Sai Boppudi</h3></dt>
+                            <dd>21VV1A0502 (III B.Tech)</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <h1>Alumni Representatives</h1>
+            <div class="info alumni-rep">
+            
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-img"><img src="{%static 'team/images/joseph.jpg'%}" alt=""></div>
+                        <hr>
+                        <div class="details">
+            
+                            <h3>Joseph Kishore</h3>
+                            <p>Associate at Congnizant</p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>joekishore999@gmail.com</p>
+                        </div>
+            
+                    </div>
+                    </div>
+            
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-img"><img src="{%static 'team/images/prof_img.jpeg'%}" alt=""></div>
+                        <hr>
+                        <div class="details">
+            
+                            <h3>K Y Nischala Rupini</h3>
+                            <p>Technical Business Analyst Apoorva software(Bangalore)</p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>nischalarupini.ky@gmail.com</p>
+            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
 
     </body>
 
