@@ -57,7 +57,8 @@
       <div class="header">
         <h1>My Problem Statements</h1>
       </div>
-
+      {% if statements %}
+      <p>Find More Problem statements <a href="/problemstatements">here</a></p>
       {% for statement in statements %}
       <div class="card">
         <div class="top">
@@ -71,6 +72,12 @@
         <a href="/problemstatements/{{statement.slug}}"><button>View Details</button></a>
       </div>
       {% endfor %}
+      {% else %}
+      <div class="card">
+        <p>You haven't seleted any problem statements... Find Problem statements <a href="/problemstatements">here</a></p>
+      </div>
+      {% endif %}
+      
     </div>
   </div>
 
