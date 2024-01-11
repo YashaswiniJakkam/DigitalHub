@@ -66,21 +66,20 @@
                     </div>
                     <div>
                         {% if userrole == "mentor" %}
-                        <form action="{%url 'home:mentor_apply'%}" method="post">
-                            {%csrf_token%}
-                            <input type="text" value="{{statement.slug}}" hidden name="slug">
+                        <form action="{% url 'home:mentorApply' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" value="{{ statement.slug }}" hidden name="slug">
                             <input type="submit" value="Apply">
                         </form>
                         {% else %}
-                            
-                        <form action="{%url 'home:studentProblemStatementRegister'%}" method="post">
-                            {%csrf_token%}
-                            <input type="text" value="{{statement.slug}}" hidden name="slug">
+                        <form action="{% url 'home:studentProblemStatementRegister' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" value="{{ statement.slug }}" hidden name="slug">
                             <input type="submit" value="Apply">
                         </form>
                         {% endif %}
 
-                        
+
                     </div>
                 </div>
             </div>
