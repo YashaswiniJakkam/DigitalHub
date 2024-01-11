@@ -18,7 +18,8 @@ def problem_statement_detail(request, slug):
 	if request.user.is_authenticated:
 		userrole = request.user.userprofile.role
 	else: userrole = ""
-	context = {'statement':problem_statement,'userrole':userrole}
+	mentors = problem_statement.mentors_assigned.all()
+	context = {'statement':problem_statement,'userrole':userrole,'mentors':mentors}
 	return render(request, 'problemstatements/probst.html', context)
 
 def courses(request):
@@ -34,6 +35,8 @@ def dashboard(request):
 	elif request.user.userprofile.role == "mentor":
 		userdata = Mentor.objects.get(email=user.username)
 		return render(request, "./dashboard/mentor_profile.html",{"data":userdata})
+	else:
+		return render(request, "./dashboard/mentor_profile.html")
 
 @login_required
 def studentProblemStatementRegister(request):

@@ -140,7 +140,92 @@ h3 {
         border-right: none;
         text-align: left;
     }
+
+
+.rhs .buttons{
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
+    
+    .sec-butt button{
+        font-family: "Quicksand";
+        font-size: 2vh;
+        border: none;
+        outline: none;
+        padding: 10px 12px;
+        margin: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: black;
+        border: 4px solid #092c64;
+        cursor: pointer;
+        font-weight: 1100;
+        width: 100%;
+    }
+    .primary-butt input{
+        font-family: "Quicksand";
+        font-size: 3vh;
+        border: none;
+        outline: none;
+        padding: 10px 12px;
+        margin: 20px;
+        border-radius: 10px;
+        background-color: #092c64;
+        color: #fff;
+        font-weight: 300;
+        width: 100%;
+    }
+}
+
+.rhs .buttons{
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Quicksand";
+    
+}
+
+ .primary-butt input{
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background-color: #092c64;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Quicksand";
+    font-weight: 900;
+    
+}
+.sec-butt button{
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: black;
+    border: 4px solid #092c64;
+    cursor: pointer;
+    font-weight: 900;
+    font-family: "Quicksand";
+}
+
+.primary-butt button:hover{
+    background-color: #fff;
+    color: #092c64;
+    border: 3px solid #092c64;
 }
 
 
+
+.sec-butt .fa-solid{
+    color: #092c64;
+}
 

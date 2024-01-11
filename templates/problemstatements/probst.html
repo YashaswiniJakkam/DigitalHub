@@ -49,7 +49,9 @@
             <!-- right -->
             <div class="rhs">
                 <!-- mentor -->
+                {%if mentors%}
                 <h3>Mentor details:</h3>
+                {% for mentor in mentors %}
                 <div class="mentorcard">
                     <div class="card_content">
                         <div class="card_img">
@@ -58,26 +60,46 @@
                             {% endif %}
                         </div>
                         <div class="card_details">
-                            <div class="name">G Satyanarayana</div>
-                            <div class="qual">B.tech,M.tech</div>
-                            <div class="college">Jntu-Gv</div>
-                            <div class="contact">Contact : gsatya@gmail.com</div>
+                            <div class="name">{{mentor.full_name}}</div>
+                            <div class="qual">{{mentor.department}}</div>
+                            <div class="college">{{mentor.college_name}}</div>
+                            <div class="contact">Contact : {{mentor.email}}</div>
                         </div>
                     </div>
                     <div>
-                        {% if userrole == "mentor" %}
-                        <form action="{% url 'home:mentorApply' %}" method="post">
-                            {% csrf_token %}
-                            <input type="text" value="{{ statement.slug }}" hidden name="slug">
-                            <input type="submit" value="Apply">
-                        </form>
-                        {% else %}
-                        <form action="{% url 'home:studentProblemStatementRegister' %}" method="post">
-                            {% csrf_token %}
-                            <input type="text" value="{{ statement.slug }}" hidden name="slug">
-                            <input type="submit" value="Apply">
-                        </form>
-                        {% endif %}
+                {% endfor %}
+                
+                    {%endif%}
+                        <div class="buttons">
+                            {% if statement.status == "finished" and statement.livelink %}
+                            <div class="sec-butt">
+                                <a href="http://{{statement.livelink}}"><button>View Live <i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+
+                            </div>
+                            {%else%}
+                            <div class="primary-butt">
+                                <!-- <button>Apply</button> -->
+                                {% if userrole == "mentor" %}
+                                <form action="{% url 'home:mentorApply' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="text" value="{{ statement.slug }}" hidden name="slug">
+                                    <input type="submit" value="Apply">
+                                </form>
+                                {% else %}
+                                <form action="{% url 'home:studentProblemStatementRegister' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="text" value="{{ statement.slug }}" hidden name="slug">
+                                    <input type="submit" value="Apply">
+                                </form>
+                                {% endif %}
+                            </div>
+                            {%endif%}
+
+
+
+                        </div>
+
 
 
                     </div>

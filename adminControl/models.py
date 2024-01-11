@@ -17,6 +17,7 @@ class ProblemStatements(models.Model):
     students_working_on = models.ManyToManyField(Student, blank=True,related_name='problems')
     mentors_assigned = models.ManyToManyField(Mentor, blank=True, related_name='assigned_problem_statements')
     mentors_applied = models.ManyToManyField('MentorApplication', blank=True, related_name='applied_problem_statements')
+    livelink = models.CharField(verbose_name='live link', blank=True, max_length=100)
 
     def save(self, *args, **kwargs):
         if not self.slug:
