@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'problemstatements/probst.css'%}">
-    <title>prob st</title>
+    <title>{{statement.title}}</title>
 </head>
 
 <body>
-    {% include 'home/navbar.html'   %}
+    {% include 'home/navbar.html' %}
     <section class="prob-st">
         <div class="title">
             <h1 class="statement">{{statement.title}}</h1>
@@ -44,7 +44,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
             <!-- right -->
             <div class="rhs">
@@ -52,20 +52,38 @@
                 <h3>Mentor details:</h3>
                 <div class="mentorcard">
                     <div class="card_content">
-                            <div class="card_img">
-                                {% if statement.mentor_pic %}  
-                                <img src="{%static 'mentor_pics/Passport_Photograph1000X1000.jpg'%}" alt="mentor pic">
-                                {% endif %}
-                            </div>
-                            <div class="card_details">
-                                <div class="name">G Satyanarayana</div>
-                                <div class="qual">B.tech,M.tech</div>
-                                <div class="college">Jntu-Gv</div>
-                                <div class="contact">Contact : gsatya@gmail.com</div>
-                            </div>
+                        <div class="card_img">
+                            {% if statement.mentor_pic %}
+                            <img src="{%static 'mentor_pics/Passport_Photograph1000X1000.jpg'%}" alt="mentor pic">
+                            {% endif %}
+                        </div>
+                        <div class="card_details">
+                            <div class="name">G Satyanarayana</div>
+                            <div class="qual">B.tech,M.tech</div>
+                            <div class="college">Jntu-Gv</div>
+                            <div class="contact">Contact : gsatya@gmail.com</div>
+                        </div>
+                    </div>
+                    <div>
+                        {% if userrole == "mentor" %}
+                        <form action="{%url 'home:mentor_apply'%}" method="post">
+                            {%csrf_token%}
+                            <input type="text" value="{{statement.slug}}" hidden name="slug">
+                            <input type="submit" value="Apply">
+                        </form>
+                        {% else %}
+                            
+                        <form action="{%url 'home:studentProblemStatementRegister'%}" method="post">
+                            {%csrf_token%}
+                            <input type="text" value="{{statement.slug}}" hidden name="slug">
+                            <input type="submit" value="Apply">
+                        </form>
+                        {% endif %}
+
+                        
                     </div>
                 </div>
-        </div>
+            </div>
     </section>
 </body>
 

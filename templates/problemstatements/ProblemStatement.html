@@ -23,10 +23,10 @@
     <div class="card">
       <div class="top">
         <h2>{{statement.title}}</h2>
-        <div class="mentor-details">
+        <!-- <div class="mentor-details">
           <h4>Mentor: {{statement.mentor_name}}</h4>
           <h4>Contact: {{statement.contact_mail}}</h4>
-        </div>
+        </div> -->
       </div>
       <p>{{statement.description}}</p>
       <a href="/problemstatements/{{statement.slug}}"><button>View Details</button></a>
@@ -34,7 +34,7 @@
     {% endfor %}
     
 
-    <div class="pagination">
+    <!-- <div class="pagination">
       <button>&lt;&lt; Prev</button>
       <div class="itemsPerPage">
         <label for="itemsPerPage">Items per page:</label>
@@ -45,7 +45,7 @@
         </select>
       </div>
       <button>Next &gt;&gt;</button>
-    </div>
+    </div> -->
   </main>
 
   <script src="script.js"></script>
