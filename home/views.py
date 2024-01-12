@@ -19,7 +19,8 @@ def problem_statement_detail(request, slug):
 		userrole = request.user.userprofile.role
 	else: userrole = ""
 	mentors = problem_statement.mentors_assigned.all()
-	context = {'statement':problem_statement,'userrole':userrole,'mentors':mentors}
+	students = problem_statement.students_working_on.all()
+	context = {'statement':problem_statement,'userrole':userrole,'mentors':mentors,'students':students}
 	return render(request, 'problemstatements/probst.html', context)
 
 def team(request):
