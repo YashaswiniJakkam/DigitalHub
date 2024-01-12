@@ -71,6 +71,10 @@
     padding: 0.5rem 0;
 }
 
+.desc{
+    text-align: justify;
+}
+
 .rhs{
     padding: 0 1rem;
     text-align: left;
