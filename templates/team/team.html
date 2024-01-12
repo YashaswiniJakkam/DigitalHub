@@ -61,7 +61,7 @@
                 margin-top:2rem;
                 padding:2rem;
                 line-height: 2rem;
-                height:23rem;
+                height:24rem;
             }
             .card-img img{
                 border-radius: 15px;
@@ -85,12 +85,17 @@
             .stu-rep .card{
                 margin:2rem;
                 width:40%;
-                height:20rem;
+                height:23rem;
             }
             .alumni-rep .card{
                 height:26rem;
             }
-
+            .alumni-rep{
+                margin-bottom: 2rem;
+            }
+            .ind-rep .card{
+                width:50%;
+            }
             
 
             @media screen and (max-width:898px) {
@@ -118,7 +123,7 @@
             }
             @media screen and (max-width:400px){
                 body{
-                    margin:1rem;
+                    margin:0.2rem;
                 }
             
                 .alumni-rep .card{
@@ -126,12 +131,16 @@
                 }
 
                 .stu-rep .card{
-                    height:22rem;
+                    height:auto;
                 }
 
                 .card{
-                    height:25rem;
+                    height:auto;
                 }
+                .ind-rep .card{
+                    width:100%;
+                }
+                
             }
 
         </style>
@@ -317,6 +326,23 @@
                     </div>
                 </div>
             </div>
+            <h1>Industry Expert</h1>
+            <div class="info ind-rep">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-img"><img src="{%static 'team/images/prasanth.jpg'%}" alt=""></div>
+                        <hr>
+                        <div class="details">
+            
+                            <h3>W Prasanth</h3>
+                            <p>Sr Software Engineer</p>
+                            <p>Mouritech</p>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </body>
